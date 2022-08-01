@@ -66,7 +66,11 @@ class FingerprintScreens extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => RegisterPage(),
+                            ),
+                          ),
                           child: Text(
                             "Register Now",
                             style: TextStyle(color: Colors.white),
