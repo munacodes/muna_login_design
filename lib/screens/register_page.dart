@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_register_design/screens/fingerprint.dart';
-import 'package:login_register_design/screens/register.dart';
+import 'package:login_register_design/screens/fingerprint_page.dart';
+import 'package:login_register_design/screens/login_page.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({Key? key}) : super(key: key);
@@ -15,10 +15,9 @@ class MyWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(
-                  MaterialPageRoute(
-                    builder: (context) => FingerprintScreens(),
-                  ),
+                onPressed: () => Navigator.pop(
+                  context,
+                  FingerprintScreens(),
                 ),
                 child: Icon(Icons.arrow_back_ios_new_rounded),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_register_design/screens/register.dart';
-import 'package:login_register_design/screens/logins.dart';
+import 'package:login_register_design/screens/register_page.dart';
+import 'package:login_register_design/screens/login_page.dart';
 
 class FingerprintScreens extends StatelessWidget {
   const FingerprintScreens({Key? key}) : super(key: key);
@@ -46,7 +46,11 @@ class FingerprintScreens extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          ),
                           child: Text(
                             "Login",
                             style: TextStyle(color: Colors.white),
