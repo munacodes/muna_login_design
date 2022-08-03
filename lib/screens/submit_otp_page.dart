@@ -86,9 +86,22 @@ class SumbitOTPPage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "A 4 digit code has been sent to +2348026604210",
+                      "A verification code has been sent to your email and",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          fontSize: 15.0),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "mobile number",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                          fontSize: 15.0),
                     ),
                   ],
                 ),

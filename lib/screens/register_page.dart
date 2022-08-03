@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_register_design/screens/fingerprint_page.dart';
 import 'package:login_register_design/screens/login_page.dart';
+import 'package:login_register_design/screens/successful_page.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -44,9 +45,9 @@ class RegisterPage extends StatelessWidget {
                   SizedBox(
                     height: 40.0,
                   ),
-                  Center(
+                  Container(
+                    width: double.infinity,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +80,7 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 50.0,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,7 +149,11 @@ class RegisterPage extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => SuccessfulPage(),
+                            ),
+                          ),
                           child: Text(
                             "Register Now",
                             style: TextStyle(color: Colors.white),
@@ -157,12 +162,6 @@ class RegisterPage extends StatelessWidget {
                       ),
                       SizedBox(
                         height: 20.0,
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      SizedBox(
-                        height: 40.0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

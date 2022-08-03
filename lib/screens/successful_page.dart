@@ -11,22 +11,36 @@ class SuccessfulPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.orange,
         body: Padding(
-          padding: EdgeInsets.all(100.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    "Successful",
-                    style: TextStyle(
-                        fontSize: 29.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ],
-              ),
-            ],
+          padding: EdgeInsets.all(20.0),
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.verified,
+                      size: 100.0,
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Successful",
+                      style: TextStyle(
+                          fontSize: 29.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
