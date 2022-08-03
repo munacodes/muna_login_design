@@ -174,12 +174,19 @@ class RegisterPage extends StatelessWidget {
                           SizedBox(
                             width: 10.0,
                           ),
-                          Text(
-                            "Login",
-                            style: TextStyle(
-                                color: Colors.orange,
-                                fontWeight: FontWeight.bold),
-                          )
+                          TextButton(
+                            onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ),
+                            ),
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ],
                       ),
                     ],

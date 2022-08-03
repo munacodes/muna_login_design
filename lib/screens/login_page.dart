@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_register_design/screens/fingerprint_page.dart';
+import 'package:login_register_design/screens/forgot_password_page.dart';
 import 'package:login_register_design/screens/register_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -12,34 +13,29 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(20.0),
           child: SingleChildScrollView(
-            child: Container(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: 600),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      GestureDetector(
-                        onTap: () => Navigator.of(context).pop(
+                      Icon(Icons.arrow_back_ios),
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(
                           MaterialPageRoute(
                             builder: (context) => FingerprintScreens(),
                           ),
                         ),
-                        child: Container(
-                          width: 30.0,
-                          child: Icon(Icons.navigate_before_rounded),
+                        child: Text(
+                          "Back",
+                          style: TextStyle(fontSize: 15.0, color: Colors.black),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        "Back",
-                        style: TextStyle(fontSize: 15.0),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 40.0,
+                    height: 20.0,
                   ),
                   Center(
                     child: Column(
@@ -75,9 +71,7 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
+                  Spacer(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,41 +80,40 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 15.0),
                       ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.grey,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: ("@ email.com"),
+                                border: OutlineInputBorder(),
+                              ),
+                            ),
                           ),
-                          onPressed: () {},
-                          child: TextField(
-                            decoration: InputDecoration(hintText: "@ email"),
-                          ),
-                        ),
+                        ],
                       ),
                       SizedBox(
-                        height: 20.0,
+                        height: 10.0,
                       ),
                       Text(
                         "Password",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 15.0),
                       ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.grey,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: ("Enter password"),
+                                border: OutlineInputBorder(),
+                              ),
+                            ),
                           ),
-                          onPressed: () {},
-                          child: TextField(
-                            decoration:
-                                InputDecoration(hintText: "Enter password"),
-                          ),
-                        ),
+                        ],
                       ),
                       SizedBox(
-                        height: 20.0,
+                        height: 15.0,
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -135,14 +128,18 @@ class LoginPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text(
-                            "Forgot Password ?",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          TextButton(
+                            onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => ForgotPasswordPage(),
+                              ),
+                            ),
+                            child: Text(
+                              "Forgot Password ?",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
                         ],
-                      ),
-                      SizedBox(
-                        height: 20.0,
                       ),
                       Row(
                         children: [
@@ -170,42 +167,37 @@ class LoginPage extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 20.0,
+                        height: 15.0,
                       ),
-                      Row(
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.blue[900],
-                            ),
-                            onPressed: () {},
-                            child: Text(
-                              "f",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25.0),
-                            ),
-                          ),
-                          Expanded(
-                            child: SizedBox(
-                              width: double.infinity,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.blue[700],
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  "Login with Facebook",
-                                  style: TextStyle(color: Colors.white),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue[900],
+                        ),
+                        onPressed: () {},
+                        child: Container(
+                          width: double.infinity,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.facebook,
+                                size: 20.0,
+                                color: Colors.white,
+                              ),
+                              Expanded(
+                                child: Center(
+                                  child: Text(
+                                    "Login with Facebook",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 15.0),
+                                  ),
                                 ),
                               ),
-                            ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                       SizedBox(
-                        height: 40.0,
+                        height: 20.0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -217,12 +209,19 @@ class LoginPage extends StatelessWidget {
                           SizedBox(
                             width: 10.0,
                           ),
-                          Text(
-                            "Register",
-                            style: TextStyle(
-                                color: Colors.orange,
-                                fontWeight: FontWeight.bold),
-                          )
+                          TextButton(
+                            onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => RegisterPage(),
+                              ),
+                            ),
+                            child: Text(
+                              "Register",
+                              style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ],
                       ),
                     ],
